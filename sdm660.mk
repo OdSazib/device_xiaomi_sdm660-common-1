@@ -173,6 +173,15 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5 \
     vendor.qti.hardware.camera.device@1.0
 
+# Component overrides
+ifeq ($(TARGET_USE_QTI_BT_STACK), true)
+	PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/configs/component-overrides-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
+   else	
+	PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+endif
+
 # Codec2 modules
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
@@ -396,16 +405,14 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-lineage \
-    $(COMMON_PATH)/overlay-system
+    $(COMMON_PATH)/overlay-lineage
 
 # RRO configuration
 TARGET_USES_RRO := true
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(COMMON_PATH)/overlay-lineage/lineage-sdk \
-    $(COMMON_PATH)/overlay-lineage/packages/apps/Snap \
-    $(COMMON_PATH)/overlay-system
+    $(COMMON_PATH)/overlay-lineage/packages/apps/Snap
 
 # Powerhint
 ifeq ($(EAS_POWERHINT_VARIANT),sdm636)
