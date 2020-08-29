@@ -192,14 +192,14 @@ on boot
     chown system system /sys/class/power_supply/battery/device/thermalcall
     
     # SysInfo
-    chmod 0660 /sys/class/thermal/thermal_zone4/temp
+    chmod 0660 /sys/class/thermal/thermal_zone7/temp
     chmod 0666 /sys/class/power_supply/bms/temp
-    chmod 0660 /sys/kernel/gpu/gpu_clock
-    chmod 0660 /sys/kernel/gpu/gpu_busy
-    chown system system /sys/class/thermal/thermal_zone4/temp
+    chmod 0660 /sys/devices/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/clock_mhz
+    chmod 0660 /sys/devices/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_busy_percentage
+    chown system system /sys/class/thermal/thermal_zone7/temp
     chown system system /sys/class/power_supply/bms/temp
-    chown system graphics /sys/kernel/gpu/gpu_clock
-    chown system graphics /sys/kernel/gpu/gpu_busy
+    chown system graphics /sys/devices/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/clock_mhz
+    chown system graphics /sys/devices/soc/5000000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_busy_percentage
 
     mkdir /vendor/mnt/persist/drm 0770 system system
     mkdir /vendor/mnt/persist/bluetooth 0770 bluetooth bluetooth
