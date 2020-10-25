@@ -395,7 +395,8 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-lineage
+    $(COMMON_PATH)/overlay-lineage \
+    $(COMMON_PATH)/overlay-ros
 
 # RRO configuration
 TARGET_USES_RRO := true
@@ -406,7 +407,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(COMMON_PATH)/overlay-system
 
 # Powerhint
-ifeq ($(EAS_POWERHINT_VARIANT),sdm636)
+ifeq ($(EAS_POWERHINT_VARIANT), sdm636)
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/power-libperfmgr/sdm636_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 else
