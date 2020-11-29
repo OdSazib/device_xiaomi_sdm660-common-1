@@ -14,7 +14,7 @@
 /dev/block/zram0                                            none                    swap    sw                                                                                              zramsize=2147483648
 /dev/block/bootdevice/by-name/cust                          /metadata               ext4    nodev,noatime,nosuid,discard                                                                    wait,check,formattable
 /dev/block/bootdevice/by-name/userdata                      /data                   ext4    nodev,noatime,nosuid,barrier=1,noauto_da_alloc,discard                                          wait,check,fileencryption=ice,quota,reservedsize=512M
-/devices/soc/c084000.sdhci/mmc_host*                        /storage/sdcard1        vfat    nodev,nosuid                                                                                    wait,voldmanaged=sdcard1:auto,encryptable=footer
+/devices/platform/soc/*.sdhci/mmc_host*                     /storage/sdcard1        vfat    nodev,nosuid                                                                                    wait,voldmanaged=sdcard1:auto,encryptable=footer
 /dev/block/bootdevice/by-name/modem                         /vendor/firmware_mnt    vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0    wait
 /dev/block/bootdevice/by-name/bluetooth                     /vendor/bt_firmware     vfat    ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0 wait
 /dev/block/bootdevice/by-name/dsp                           /vendor/dsp             ext4    ro,nodev,nosuid,barrier=1                                                                       wait
@@ -26,4 +26,4 @@
 /dev/block/bootdevice/by-name/vendor                        /vendor                 ext4    ro,barrier=1                                                                                    wait,recoveryonly
 /dev/block/bootdevice/by-name/boot                          /boot                   emmc    defaults                                                                                        defaults
 
-/devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto*    /storage/usbotg         vfat    nodev,nosuid                                                                                    wait,voldmanaged=usbotg:auto
+/devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*       /storage/usbotg         vfat    nodev,nosuid                                                                                    wait,voldmanaged=usbotg:auto
