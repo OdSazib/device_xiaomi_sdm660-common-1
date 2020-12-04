@@ -123,6 +123,14 @@ on fs
 on post-fs
     start vendor.qseecomd
     write /dev/ipa 1
+    
+    # Haptic
+    chown system system /sys/class/leds/vibrator/vmax_override
+    write /sys/class/leds/vibrator/vmax_override 1
+    chown system system /sys/class/leds/vibrator/vmax_mv_user
+    write /sys/class/leds/vibrator/vmax_mv_user 1160
+    chown system system /sys/class/leds/vibrator/vmax_mv_call
+    chown system system /sys/class/leds/vibrator/vmax_mv_strong
 
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
