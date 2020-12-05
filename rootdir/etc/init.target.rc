@@ -33,10 +33,6 @@ on early-init
     mkdir /dsp 0771 media media
 
 on init
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.boost 5
-    write /dev/stune/top-app/schedtune.prefer_idle 1
-
     # Add a cpuset for the camera daemon
     mkdir /dev/cpuset/camera-daemon 0750 cameraserver cameraserver
     write /dev/cpuset/camera-daemon/cpus 0-7
