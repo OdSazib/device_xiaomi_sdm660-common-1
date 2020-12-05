@@ -4,6 +4,11 @@ type mlipay_prop, property_type;
 type vendor_fp_prop, property_type;
 type vendor_camera_prop, property_type;
 
+# HACK
+type vendor_video_prop, property_type;
+type vendor_mpctl_prop, property_type;
+type camera_prop, property_type;
+
 # Thermal engine
 type thermal_engine_prop, property_type;
 

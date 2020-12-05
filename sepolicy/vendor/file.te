@@ -10,6 +10,25 @@ type fingerprintd_device, file_type, dev_type;
 type persist_fingerprint_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
 
+# HACK
+type sysfs_battery_supply, fs_type, sysfs_type;
+type sysfs_kgsl, fs_type, sysfs_type;
+type sysfs_graphics, fs_type, sysfs_type;
+type sysfs_devfreq, fs_type, sysfs_type;
+type sysfs_sectouch, fs_type, sysfs_type;
+type adsprpcd_file, file_type;
+type bt_firmware_file, file_type;
+type firmware_file, file_type;
+type persist_file, file_type;
+type persist_drm_file, file_type;
+type device_latency, dev_type;
+type latency_device, dev_type;
+type persist_block_device, dev_type;
+type diag_device;
+type ipa_dev;
+type vendor_sysfs_usb_supply, vendor_file_type, file_type;
+type poweroffalarm_app, domain;
+
 # Hall Switch
 type hall_dev, sysfs_type, fs_type;
 
